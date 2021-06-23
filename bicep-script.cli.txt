@@ -1,0 +1,19 @@
+bicepFile="c:\bicep-demo\azuredeploy.bicep"
+devParameterFile="azuredeploy.parameters.json"
+
+az group create \
+  --name pdtbicepRG \
+  --location "East US"
+  
+az deployment group create \
+  --name devenvironment \
+  --resource-group pdtbicepRG \
+  --template-file $bicepFile \
+  --parameters $devParameterFile
+
+
+  az group create --name pdtbicepRG --location "East US"
+
+  az deployment group create --name devenvironment --resource-group pdtbicepRG --template-file $bicepFile --parameters $devParameterFile
+
+  
